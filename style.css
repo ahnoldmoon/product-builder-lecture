@@ -1,1 +1,67 @@
-/* Add styles here */
+:root {
+    --background-color: oklch(20% 0.1 250);
+    --text-color: oklch(95% 0.01 250);
+    --accent-color: oklch(70% 0.25 300);
+    --shadow-color: oklch(40% 0.25 300);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: sans-serif;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: oklch(25% 0.1 250);
+    box-shadow: 0 0 2rem var(--shadow-color);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 1rem var(--accent-color);
+}
+
+.lotto-display {
+    margin-bottom: 2rem;
+}
+
+#generate-btn {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 1rem var(--accent-color);
+}
+
+#generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 1.5rem var(--accent-color);
+}
+
+.history {
+    margin-top: 2rem;
+}
+
+#history-list {
+    list-style: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#history-list li {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
