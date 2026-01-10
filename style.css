@@ -1,13 +1,20 @@
 :root {
-    --background-color: oklch(20% 0.1 250);
-    --text-color: oklch(95% 0.01 250);
-    --accent-color: oklch(70% 0.25 300);
-    --shadow-color: oklch(40% 0.25 300);
+    --background-color-dark: oklch(20% 0.1 250);
+    --text-color-dark: oklch(95% 0.01 250);
+    --accent-color-dark: oklch(70% 0.25 300);
+    --shadow-color-dark: oklch(40% 0.25 300);
+    --container-bg-dark: oklch(25% 0.1 250);
+
+    --background-color-light: oklch(95% 0.01 250);
+    --text-color-light: oklch(20% 0.1 250);
+    --accent-color-light: oklch(70% 0.25 150);
+    --shadow-color-light: oklch(40% 0.25 150);
+    --container-bg-light: oklch(100% 0 0);
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
     font-family: sans-serif;
     display: grid;
     place-content: center;
@@ -15,18 +22,32 @@ body {
     margin: 0;
 }
 
+body.light-mode {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+}
+
 .container {
     text-align: center;
     padding: 2rem;
     border-radius: 1rem;
-    background-color: oklch(25% 0.1 250);
-    box-shadow: 0 0 2rem var(--shadow-color);
+    background-color: var(--container-bg-dark);
+    box-shadow: 0 0 2rem var(--shadow-color-dark);
+}
+
+body.light-mode .container {
+    background-color: var(--container-bg-light);
+    box-shadow: 0 0 2rem var(--shadow-color-light);
 }
 
 h1 {
     font-size: 3rem;
     margin-bottom: 2rem;
-    text-shadow: 0 0 1rem var(--accent-color);
+    text-shadow: 0 0 1rem var(--accent-color-dark);
+}
+
+body.light-mode h1 {
+    text-shadow: 0 0 1rem var(--accent-color-light);
 }
 
 .lotto-display {
@@ -34,20 +55,30 @@ h1 {
 }
 
 #generate-btn {
-    background-color: var(--accent-color);
-    color: var(--text-color);
+    background-color: var(--accent-color-dark);
+    color: var(--text-color-dark);
     border: none;
     padding: 1rem 2rem;
     font-size: 1.5rem;
     border-radius: 0.5rem;
     cursor: pointer;
     transition: all 0.2s ease;
-    box-shadow: 0 0 1rem var(--accent-color);
+    box-shadow: 0 0 1rem var(--accent-color-dark);
+}
+
+body.light-mode #generate-btn {
+    background-color: var(--accent-color-light);
+    color: var(--text-color-light);
+    box-shadow: 0 0 1rem var(--accent-color-light);
 }
 
 #generate-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 1.5rem var(--accent-color);
+    box-shadow: 0 0 1.5rem var(--accent-color-dark);
+}
+
+body.light-mode #generate-btn:hover {
+    box-shadow: 0 0 1.5rem var(--accent-color-light);
 }
 
 .history {
@@ -64,4 +95,61 @@ h1 {
 #history-list li {
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
+}
+
+/* Theme Switch */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--accent-color-light);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--accent-color-light);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
 }
