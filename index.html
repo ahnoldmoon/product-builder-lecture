@@ -14,6 +14,28 @@
         <div id="menu-container" class="hidden">
             <!-- 추천 메뉴가 여기에 표시됩니다. -->
         </div>
+
+        <hr style="margin: 3rem 0; border-color: #eee;">
+
+        <div class="contact-form-section">
+            <h2>제휴 문의</h2>
+            <p>저희 서비스에 대한 제휴 문의는 아래 양식을 통해 남겨주세요.</p>
+            <form action="https://formspree.io/f/mreezare" method="POST" class="formspree-form">
+                <div class="form-group">
+                    <label for="name">이름:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">이메일:</label>
+                    <input type="email" id="email" name="_replyto" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">메시지:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">문의 보내기</button>
+            </form>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>
