@@ -1,155 +1,94 @@
-:root {
-    --background-color-dark: oklch(20% 0.1 250);
-    --text-color-dark: oklch(95% 0.01 250);
-    --accent-color-dark: oklch(70% 0.25 300);
-    --shadow-color-dark: oklch(40% 0.25 300);
-    --container-bg-dark: oklch(25% 0.1 250);
-
-    --background-color-light: oklch(95% 0.01 250);
-    --text-color-light: oklch(20% 0.1 250);
-    --accent-color-light: oklch(70% 0.25 150);
-    --shadow-color-light: oklch(40% 0.25 150);
-    --container-bg-light: oklch(100% 0 0);
-}
-
 body {
-    background-color: var(--background-color-dark);
-    color: var(--text-color-dark);
-    font-family: sans-serif;
-    display: grid;
-    place-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     margin: 0;
 }
 
-body.light-mode {
-    background-color: var(--background-color-light);
-    color: var(--text-color-light);
-}
-
 .container {
+    background-color: #fff;
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 2rem;
-    border-radius: 1rem;
-    background-color: var(--container-bg-dark);
-    box-shadow: 0 0 2rem var(--shadow-color-dark);
-}
-
-body.light-mode .container {
-    background-color: var(--container-bg-light);
-    box-shadow: 0 0 2rem var(--shadow-color-light);
+    max-width: 600px;
+    width: 90%;
 }
 
 h1 {
-    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+p {
     margin-bottom: 2rem;
-    text-shadow: 0 0 1rem var(--accent-color-dark);
+    font-size: 1.1rem;
 }
 
-body.light-mode h1 {
-    text-shadow: 0 0 1rem var(--accent-color-light);
-}
-
-.lotto-display {
-    margin-bottom: 2rem;
-}
-
-#generate-btn {
-    background-color: var(--accent-color-dark);
-    color: var(--text-color-dark);
+#recommend-btn {
+    background-color: #007bff;
+    color: #fff;
     border: none;
-    padding: 1rem 2rem;
-    font-size: 1.5rem;
-    border-radius: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
     cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 0 1rem var(--accent-color-dark);
+    transition: background-color 0.3s ease;
 }
 
-body.light-mode #generate-btn {
-    background-color: var(--accent-color-light);
-    color: var(--text-color-light);
-    box-shadow: 0 0 1rem var(--accent-color-light);
+#recommend-btn:hover {
+    background-color: #0056b3;
 }
 
-#generate-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 1.5rem var(--accent-color-dark);
-}
-
-body.light-mode #generate-btn:hover {
-    box-shadow: 0 0 1.5rem var(--accent-color-light);
-}
-
-.history {
+#menu-container {
     margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
 }
 
-#history-list {
-    list-style: none;
-    padding: 0;
-    max-height: 200px;
-    overflow-y: auto;
+.menu-item {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: transform 0.2s;
 }
 
-#history-list li {
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
     margin-bottom: 0.5rem;
+    background-color: #e9ecef; /* Placeholder background */
+}
+
+.menu-item h3 {
+    margin: 0;
     font-size: 1.2rem;
+    color: #495057;
 }
 
-/* Theme Switch */
-.theme-switch-wrapper {
+.menu-item.text-only {
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
+    align-items: center;
+    min-height: 150px; /* Match image height for consistency */
 }
 
-.theme-switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+.menu-item.text-only h3 {
+    font-size: 1.5rem;
 }
 
-.theme-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-}
-
-input:checked + .slider {
-    background-color: var(--accent-color-light);
-}
-
-input:focus + .slider {
-    box-shadow: 0 0 1px var(--accent-color-light);
-}
-
-input:checked + .slider:before {
-    transform: translateX(26px);
+.hidden {
+    display: none;
 }

@@ -1,29 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>오늘의 추천 메뉴</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
 </head>
 <body>
     <div class="container">
-        <h1>Lotto Number Generator</h1>
-        <div class="theme-switch-wrapper">
-            <label class="theme-switch" for="checkbox">
-                <input type="checkbox" id="checkbox" />
-                <div class="slider round"></div>
-            </label>
-        </div>
-        <div class="lotto-display">
-            <lotto-numbers></lotto-numbers>
-        </div>
-        <button id="generate-btn">Generate Numbers</button>
-        <div class="history">
-            <h2>History</h2>
-            <ul id="history-list"></ul>
+        <h1>오늘의 추천 메뉴</h1>
+        <p>아래 버튼을 눌러 추천 메뉴를 확인하세요!</p>
+        <button id="recommend-btn">추천 메뉴 보기</button>
+        <div id="menu-container" class="hidden">
+            <!-- 추천 메뉴가 여기에 표시됩니다. -->
         </div>
     </div>
+    <script src="main.js"></script>
 </body>
 </html>

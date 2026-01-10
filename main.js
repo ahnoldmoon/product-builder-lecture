@@ -1,83 +1,59 @@
-class LottoNumbers extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-  }
+const recommendBtn = document.getElementById('recommend-btn');
+const menuContainer = document.getElementById('menu-container');
 
-  connectedCallback() {
-    this.render();
-  }
+const menuData = [
+    "김치찌개",
+    "된장찌개",
+    "비빔밥",
+    "불고기",
+    "떡볶이",
+    "치킨",
+    "피자",
+    "파스타",
+    "초밥",
+    "라멘"
+];
 
-  set numbers(numbers) {
-    this._numbers = numbers;
-    this.render();
-  }
+recommendBtn.addEventListener('click', () => {
+    // Clear previous recommendations
+    menuContainer.innerHTML = '';
 
-  get numbers() {
-    return this._numbers;
-  }
+    // Get 3 random menu items
+    const recommendations = getRandomItems(menuData, 3);
 
-  render() {
-    const accentColor = getComputedStyle(document.documentElement).getPropertyValue(
-      document.body.classList.contains('light-mode') ? '--accent-color-light' : '--accent-color-dark'
-    );
+    // Show the menu container
+    menuContainer.classList.remove('hidden');
 
-    this.shadowRoot.innerHTML = `
-      <style>
-        .numbers-container {
-          display: flex;
-          gap: 1rem;
-          justify-content: center;
-        }
-        .number {
-          width: 3rem;
-          height: 3rem;
-          border-radius: 50%;
-          background-color: ${accentColor};
-          display: grid;
-          place-content: center;
-          font-size: 1.5rem;
-          font-weight: bold;
-          box-shadow: 0 0 1rem ${accentColor};
-        }
-      </style>
-      <div class="numbers-container">
-        ${this.numbers ? this.numbers.map(num => `<div class="number">${num}</div>`).join('') : ''}
-      </div>
-    `;
-  }
-}
-
-customElements.define('lotto-numbers', LottoNumbers);
-
-const generateBtn = document.getElementById('generate-btn');
-const lottoDisplay = document.querySelector('lotto-numbers');
-const historyList = document.getElementById('history-list');
-const themeSwitch = document.getElementById('checkbox');
-
-function generateLottoNumbers() {
-  const numbers = new Set();
-  while (numbers.size < 6) {
-    const randomNumber = Math.floor(Math.random() * 45) + 1;
-    numbers.add(randomNumber);
-  }
-  return Array.from(numbers).sort((a, b) => a - b);
-}
-
-generateBtn.addEventListener('click', () => {
-  const newNumbers = generateLottoNumbers();
-  lottoDisplay.numbers = newNumbers;
-
-  const historyItem = document.createElement('li');
-  historyItem.textContent = newNumbers.join(', ');
-  historyList.prepend(historyItem);
+    // Display each recommended item
+    recommendations.forEach(item => {
+        createMenuItem(item);
+    });
 });
 
-themeSwitch.addEventListener('change', () => {
-  document.body.classList.toggle('light-mode');
-  // Re-render the lotto numbers to update the color
-  lottoDisplay.render();
-});
+function getRandomItems(arr, num) {
+    const shuffled = [...arr].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, num);
+}
 
-// Initial generation
-generateBtn.click();
+function createMenuItem(name) {
+    const menuItem = document.createElement('div');
+    menuItem.className = 'menu-item';
+
+    if (name === '피자') {
+        const image = document.createElement('img');
+        // Using a free-to-use image from Pexels.
+        image.src = 'https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
+        image.alt = name;
+        menuItem.appendChild(image);
+    }
+
+    const title = document.createElement('h3');
+    title.textContent = name;
+    menuItem.appendChild(title);
+
+    if (name !== '피자') {
+        menuItem.classList.add('text-only');
+    }
+
+    menuContainer.appendChild(menuItem);
+}
