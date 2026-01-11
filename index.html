@@ -3,62 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>오늘의 추천 메뉴</title>
+    <title>동물상 테스트 (강아지상 vs 고양이상)</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>오늘의 추천 메뉴</h1>
-        <p>아래 버튼을 눌러 추천 메뉴를 확인하세요!</p>
-        <button id="recommend-btn">추천 메뉴 보기</button>
-        <div id="menu-container" class="hidden">
-            <!-- 추천 메뉴가 여기에 표시됩니다. -->
-        </div>
+    <h1>나는 강아지상일까, 고양이상일까?</h1>
+    <p>웹캠을 통해 확인해보세요!</p>
+    <button type="button" onclick="init()">시작하기</button>
+    <div id="webcam-container"></div>
+    <div id="label-container"></div>
+    <div id="result-container"></div>
 
-        <hr style="margin: 3rem 0; border-color: #eee;">
-
-        <div class="contact-form-section">
-            <h2>제휴 문의</h2>
-            <p>저희 서비스에 대한 제휴 문의는 아래 양식을 통해 남겨주세요.</p>
-            <form action="https://formspree.io/f/mreezare" method="POST" class="formspree-form">
-                <div class="form-group">
-                    <label for="name">이름:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">이메일:</label>
-                    <input type="email" id="email" name="_replyto" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">메시지:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit">문의 보내기</button>
-            </form>
-        </div>
-
-        <hr style="margin: 3rem 0; border-color: #eee;">
-
-        <div id="disqus_thread"></div>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
     <script src="main.js"></script>
-    <script>
-        /**
-        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-        
-        var disqus_config = function () {
-            this.page.url = window.location.href;
-            this.page.identifier = 'home-page';
-        };
-        
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = 'https://productbuilder-10.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </body>
 </html>
