@@ -55,8 +55,15 @@ async function predict() {
     }
     analyzeButton.disabled = true; // Disable button during prediction
     document.getElementById("result-container").innerHTML = "분석 중..."; // Show loading message
-    const prediction = await model.predict(uploadedImage);
-    displayResult(prediction);
+    console.log("Prediction started...");
+    try {
+        const prediction = await model.predict(uploadedImage);
+        console.log("Prediction completed.");
+        displayResult(prediction);
+    } catch (error) {
+        console.error("Prediction failed:", error);
+        document.getElementById("result-container").innerHTML = "분석 중 오류 발생: " + error.message;
+    }
     analyzeButton.disabled = false; // Re-enable button after prediction
 }
 
