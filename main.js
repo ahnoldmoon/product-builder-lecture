@@ -95,10 +95,10 @@ function displayResult(prediction) {
     }
 
     const resultContainer = document.getElementById("result-container");
-    if (result === "강아지 (Dog)") {
+    if (result === "dog") {
         const randomIndex = Math.floor(Math.random() * dogMessages.length);
         resultContainer.innerHTML = dogMessages[randomIndex];
-    } else if (result === "고양이 (Cat)") {
+    } else if (result === "cat") {
         const randomIndex = Math.floor(Math.random() * catMessages.length);
         resultContainer.innerHTML = catMessages[randomIndex];
     }
