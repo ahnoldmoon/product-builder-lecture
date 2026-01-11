@@ -8,9 +8,10 @@
 </head>
 <body>
     <h1>나는 강아지상일까, 고양이상일까?</h1>
-    <p>웹캠을 통해 확인해보세요!</p>
-    <button type="button" onclick="init()">시작하기</button>
-    <div id="webcam-container"></div>
+    <p>이미지를 업로드하여 확인해보세요!</p>
+    <input type="file" id="image-upload" accept="image/*">
+    <img id="uploaded-image" src="#" alt="업로드된 이미지" style="display:none; max-width: 200px; max-height: 200px;">
+    <button type="button" id="analyze-button">분석하기</button>
     <div id="label-container"></div>
     <div id="result-container"></div>
 

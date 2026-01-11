@@ -29,15 +29,6 @@ button:hover {
     background-color: #7c6a6a;
 }
 
-#webcam-container {
-    margin-top: 20px;
-    border: 5px solid #ddd;
-    border-radius: 10px;
-    width: 200px;
-    height: 200px;
-    overflow: hidden;
-}
-
 #label-container div {
     font-size: 18px;
     margin: 5px 0;

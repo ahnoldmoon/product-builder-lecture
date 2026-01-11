@@ -1,6 +1,7 @@
 const URL = "https://teachablemachine.withgoogle.com/models/P6oh72qm9/";
 
-let model, webcam, labelContainer, maxPredictions;
+let model, labelContainer, maxPredictions, uploadedImage;
+let analyzeButton;
 
 async function init() {
     const modelURL = URL + "model.json";
@@ -9,30 +10,54 @@ async function init() {
     model = await tmImage.load(modelURL, metadataURL);
     maxPredictions = model.getTotalClasses();
 
-    const flip = true; 
-    webcam = new tmImage.Webcam(200, 200, flip);
-    await webcam.setup(); 
-    await webcam.play();
-    window.requestAnimationFrame(loop);
-
-    document.getElementById("webcam-container").appendChild(webcam.canvas);
     labelContainer = document.getElementById("label-container");
     for (let i = 0; i < maxPredictions; i++) {
         labelContainer.appendChild(document.createElement("div"));
     }
-    // Hide the start button after starting
-    document.querySelector('button').style.display = 'none';
-}
 
-async function loop() {
-    webcam.update();
-    await predict();
-    window.requestAnimationFrame(loop);
+    uploadedImage = document.getElementById("uploaded-image");
+    const imageUpload = document.getElementById("image-upload");
+    analyzeButton = document.getElementById("analyze-button");
+
+    analyzeButton.disabled = true; // Disable analyze button initially
+
+    imageUpload.addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                uploadedImage.src = e.target.result;
+                uploadedImage.style.display = "block"; // Show the image
+                analyzeButton.disabled = false; // Enable analyze button
+                document.getElementById("result-container").innerHTML = ""; // Clear previous results
+                labelContainer.innerHTML = ""; // Clear previous labels
+            };
+            reader.readAsDataURL(file);
+        } else {
+            uploadedImage.src = "#";
+            uploadedImage.style.display = "none";
+            analyzeButton.disabled = true;
+            document.getElementById("result-container").innerHTML = "";
+            labelContainer.innerHTML = "";
+        }
+    });
+
+    analyzeButton.addEventListener("click", predict);
+
+    // Call init to load the model when the script loads
+    // No need for a separate "start" button anymore as image upload triggers analysis
 }
 
 async function predict() {
-    const prediction = await model.predict(webcam.canvas);
+    if (uploadedImage.style.display === "none" || !uploadedImage.src || uploadedImage.src === "#") {
+        alert("Please upload an image first.");
+        return;
+    }
+    analyzeButton.disabled = true; // Disable button during prediction
+    document.getElementById("result-container").innerHTML = "분석 중..."; // Show loading message
+    const prediction = await model.predict(uploadedImage);
     displayResult(prediction);
+    analyzeButton.disabled = false; // Re-enable button after prediction
 }
 
 function displayResult(prediction) {
@@ -72,9 +97,13 @@ function displayResult(prediction) {
     }
 
     // Optional: display probabilities in the label container
+    labelContainer.innerHTML = ""; // Clear previous labels
     for (let i = 0; i < maxPredictions; i++) {
         const classPrediction =
             prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-        labelContainer.childNodes[i].innerHTML = classPrediction;
+        labelContainer.appendChild(document.createElement("div")).innerHTML = classPrediction;
     }
 }
+
+// Initialize the model when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', init);
