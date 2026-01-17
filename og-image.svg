@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE5EC;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFC8DD;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="pawGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B9D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C44569;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- Left Paw -->
+  <g transform="translate(150, 200) scale(2)">
+    <ellipse cx="32" cy="42" rx="16" ry="14" fill="url(#pawGradient)"/>
+    <ellipse cx="14" cy="22" rx="8" ry="10" fill="url(#pawGradient)"/>
+    <ellipse cx="50" cy="22" rx="8" ry="10" fill="url(#pawGradient)"/>
+    <ellipse cx="22" cy="14" rx="7" ry="9" fill="url(#pawGradient)"/>
+    <ellipse cx="42" cy="14" rx="7" ry="9" fill="url(#pawGradient)"/>
+  </g>
+
+  <!-- Right Paw -->
+  <g transform="translate(950, 200) scale(2)">
+    <ellipse cx="32" cy="42" rx="16" ry="14" fill="url(#pawGradient)"/>
+    <ellipse cx="14" cy="22" rx="8" ry="10" fill="url(#pawGradient)"/>
+    <ellipse cx="50" cy="22" rx="8" ry="10" fill="url(#pawGradient)"/>
+    <ellipse cx="22" cy="14" rx="7" ry="9" fill="url(#pawGradient)"/>
+    <ellipse cx="42" cy="14" rx="7" ry="9" fill="url(#pawGradient)"/>
+  </g>
+
+  <!-- Main Text -->
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#C44569" text-anchor="middle">동물상 테스트</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="360" font-family="Arial, sans-serif" font-size="36" fill="#666" text-anchor="middle">나는 강아지상일까? 고양이상일까?</text>
+
+  <!-- Description -->
+  <text x="600" y="430" font-family="Arial, sans-serif" font-size="28" fill="#888" text-anchor="middle">AI가 분석하는 무료 얼굴형 테스트</text>
+
+  <!-- Bottom decoration -->
+  <text x="600" y="520" font-family="Arial, sans-serif" font-size="48" text-anchor="middle">🐕 vs 🐈</text>
+</svg>
