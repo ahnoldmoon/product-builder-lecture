@@ -42,12 +42,18 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" href="favicon.svg">
     <link rel="apple-touch-icon" href="favicon.svg">
 
     <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
+    <!-- CSS with preload for render optimization -->
+    <link rel="preload" href="style.css" as="style">
     <link rel="stylesheet" href="style.css">
 
     <!-- Structured Data / JSON-LD -->
@@ -128,8 +134,8 @@
 </head>
 <body>
     <header>
-        <h1>나는 강아지상일까, 고양이상일까?</h1>
-        <p class="description">당신의 얼굴형을 분석하여 강아지상인지 고양이상인지 재미있게 예측해봅니다. 🐾 이 서비스는 Teachable Machine을 활용한 인공지능 모델로, 이미지를 기반으로 분류합니다. 지금 바로 당신의 사진을 업로드하여 결과를 확인해보세요!</p>
+        <h1>동물상 테스트 - 나는 강아지상일까, 고양이상일까?</h1>
+        <p class="description">AI 인공지능이 당신의 얼굴형을 분석하여 강아지상인지 고양이상인지 재미있게 예측해봅니다. 이 서비스는 Teachable Machine을 활용한 인공지능 모델로, 이미지를 기반으로 분류합니다. 지금 바로 당신의 사진을 업로드하여 무료로 결과를 확인해보세요!</p>
     </header>
 
     <main>
@@ -228,8 +234,8 @@
         <p><em>(참고: '개인정보처리방침'과 '이용약관' 페이지는 별도로 생성해야 합니다.)</em></p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
-    <script src="main.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script defer src="main.js"></script>
 </body>
 </html>
