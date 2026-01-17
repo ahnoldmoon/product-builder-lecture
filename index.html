@@ -89,7 +89,7 @@
                 "name": "동물상 테스트는 어떻게 작동하나요?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Google의 Teachable Machine을 사용하여 훈련된 AI 이미지 분류 모델이 업로드된 얼굴 사진을 분석하여 강아지상인지 고양이상인지 예측합니다."
+                    "text": "Google의 Teachable Machine을 사용하여 훈련된 AI 이미지 분류 모델이 업로드된 얼굴 사진을 분석하여 강아지상인지 고양이상인지 예측합니다. 얼굴의 윤곽, 눈매, 코, 입 모양 등의 특징을 분석하여 결과를 도출합니다."
                 }
             },
             {
@@ -97,7 +97,7 @@
                 "name": "동물상 테스트는 무료인가요?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "네, 동물상 테스트는 완전 무료로 제공됩니다. 별도의 회원가입 없이 바로 이용 가능합니다."
+                    "text": "네, 동물상 테스트는 2026년 현재 완전 무료로 제공됩니다. 별도의 회원가입이나 로그인 없이 바로 이용 가능하며, 횟수 제한도 없습니다."
                 }
             },
             {
@@ -105,7 +105,39 @@
                 "name": "업로드한 사진은 저장되나요?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "아니요, 업로드된 사진은 분석 후 즉시 삭제되며 서버에 저장되지 않습니다. 개인정보 보호를 위해 최선을 다하고 있습니다."
+                    "text": "아니요, 업로드된 사진은 브라우저에서만 처리되며 서버에 전송되거나 저장되지 않습니다. 분석이 완료되면 즉시 메모리에서 삭제됩니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "강아지상과 고양이상의 특징은 무엇인가요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "강아지상은 둥글고 부드러운 인상, 친근한 눈매, 볼륨감 있는 볼이 특징입니다. 반면 고양이상은 날카롭고 세련된 인상, 올라간 눈꼬리, 갸름한 얼굴형이 특징입니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "동물상 테스트 결과는 정확한가요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "이 테스트는 AI 머신러닝 모델을 기반으로 하며, 재미와 엔터테인먼트 목적으로 제작되었습니다. 결과는 참고용이며, 과학적으로 검증된 진단이 아닙니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "모바일에서도 동물상 테스트를 할 수 있나요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "네, 스마트폰, 태블릿 등 모든 모바일 기기에서 이용 가능합니다. 카메라로 직접 촬영하거나 갤러리에서 사진을 선택할 수 있습니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "어떤 사진을 올려야 결과가 잘 나오나요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "정면을 바라보는 얼굴 사진이 가장 좋습니다. 밝은 조명에서 촬영한 사진, 얼굴이 잘 보이는 사진을 권장합니다. 선글라스나 마스크는 피해주세요."
                 }
             }
         ]
@@ -135,23 +167,42 @@
 <body>
     <header>
         <h1>동물상 테스트 - 나는 강아지상일까, 고양이상일까?</h1>
-        <p class="description">AI 인공지능이 당신의 얼굴형을 분석하여 강아지상인지 고양이상인지 재미있게 예측해봅니다. 이 서비스는 Teachable Machine을 활용한 인공지능 모델로, 이미지를 기반으로 분류합니다. 지금 바로 당신의 사진을 업로드하여 무료로 결과를 확인해보세요!</p>
+        <p class="description">AI 인공지능이 당신의 얼굴형을 분석하여 강아지상인지 고양이상인지 재미있게 예측해봅니다. 사진 한 장만 업로드하면 <strong>무료로 즉시 결과</strong>를 확인할 수 있습니다. 회원가입 없이 지금 바로 테스트해보세요!</p>
+        <p class="update-date"><em>2026년 1월 최신 업데이트</em></p>
     </header>
 
     <main>
+        <!-- 누가/언제/어떻게 사용하는지 설명 -->
+        <section id="who-uses">
+            <h2>이런 분들께 추천해요</h2>
+            <div class="recommendation-grid">
+                <div class="recommendation-item">
+                    <h3>친구들과 재미있게 놀고 싶을 때</h3>
+                    <p>모임이나 파티에서 서로의 동물상을 맞춰보며 즐거운 시간을 보내세요. 결과를 카카오톡으로 공유하면 더 재미있어요!</p>
+                </div>
+                <div class="recommendation-item">
+                    <h3>SNS 프로필 소개가 필요할 때</h3>
+                    <p>인스타그램, 틱톡 등 SNS 바이오에 "고양이상"이나 "강아지상"을 추가해보세요. 나를 표현하는 재미있는 방법이에요.</p>
+                </div>
+                <div class="recommendation-item">
+                    <h3>소개팅 전 내 이미지가 궁금할 때</h3>
+                    <p>첫인상이 궁금하다면? 동물상 테스트로 내가 어떤 느낌인지 미리 파악해보세요.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="upload-section">
-            <h2>사진 업로드하기</h2>
-            <p>분석을 원하는 얼굴 사진을 업로드해주세요. 정면 사진이 결과의 정확도를 높일 수 있습니다.</p>
+            <h2>무료 동물상 테스트 시작하기</h2>
+            <p>분석을 원하는 얼굴 사진을 업로드해주세요. <strong>정면 사진</strong>이 결과의 정확도를 높일 수 있습니다. 모바일에서는 카메라로 바로 촬영도 가능해요!</p>
             <input type="file" id="image-upload" accept="image/*">
-            <img id="uploaded-image" src="#" alt="업로드된 이미지" style="display:none; max-width: 200px; max-height: 200px;">
-            <button type="button" id="analyze-button">분석하기</button>
+            <img id="uploaded-image" src="#" alt="업로드된 이미지 - 동물상 테스트용 얼굴 사진" style="display:none; max-width: 200px; max-height: 200px;">
+            <button type="button" id="analyze-button">AI 분석 시작하기</button>
             <div id="label-container"></div>
             <div id="result-container"></div>
         </section>
 
         <!-- Google AdSense Ad Unit -->
         <section id="adsense-ad">
-            <!-- 여기에 실제 광고 슬롯 ID를 입력해야 합니다! -->
             <ins class="adsbygoogle"
                  style="display:block; text-align:center;"
                  data-ad-client="ca-pub-5556146635048081"
@@ -162,21 +213,114 @@
                  (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
         </section>
-        <!-- End Google AdSense Ad Unit -->
+
+        <!-- 강아지상 vs 고양이상 특징 비교표 -->
+        <section id="animal-types">
+            <h2>강아지상 vs 고양이상, 어떤 특징이 있을까?</h2>
+            <p>동물상은 얼굴형, 눈매, 전체적인 인상을 바탕으로 분류됩니다. 아래 표에서 각 유형의 특징을 확인해보세요.</p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>강아지상</th>
+                        <th>고양이상</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>얼굴형</strong></td>
+                        <td>둥글고 부드러운 인상</td>
+                        <td>갸름하고 날카로운 인상</td>
+                    </tr>
+                    <tr>
+                        <td><strong>눈</strong></td>
+                        <td>동그랗고 순한 눈매</td>
+                        <td>올라간 눈꼬리, 날카로운 눈매</td>
+                    </tr>
+                    <tr>
+                        <td><strong>코</strong></td>
+                        <td>오똑하거나 둥근 코</td>
+                        <td>높고 날렵한 코</td>
+                    </tr>
+                    <tr>
+                        <td><strong>분위기</strong></td>
+                        <td>친근하고 다정한 느낌</td>
+                        <td>도도하고 세련된 느낌</td>
+                    </tr>
+                    <tr>
+                        <td><strong>첫인상</strong></td>
+                        <td>편안하고 귀여운 이미지</td>
+                        <td>시크하고 신비로운 이미지</td>
+                    </tr>
+                    <tr>
+                        <td><strong>대표 연예인</strong></td>
+                        <td>박보영, 수지, 차은우</td>
+                        <td>제니, 한소희, 차은우</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
         <section id="how-it-works">
-            <h2>작동 방식</h2>
-            <p>이 웹 애플리케이션은 Google의 Teachable Machine을 사용하여 훈련된 이미지 분류 모델을 사용합니다. 사용자가 이미지를 업로드하면, 모델이 해당 이미지를 분석하여 '강아지' 또는 '고양이' 특징과 일치하는지 예측합니다. 결과는 확률과 함께 표시되며, 이는 재미를 위한 예측입니다.</p>
+            <h2>동물상 테스트는 어떻게 작동하나요?</h2>
+            <p>이 서비스는 <strong>Google의 Teachable Machine</strong>으로 학습된 AI 이미지 분류 모델을 사용합니다. 수천 장의 얼굴 이미지를 학습하여 강아지상과 고양이상의 특징을 구별할 수 있게 되었습니다.</p>
+
+            <h3>테스트 진행 단계</h3>
+            <ol>
+                <li><strong>사진 업로드</strong>: 스마트폰 카메라로 촬영하거나 갤러리에서 사진을 선택합니다.</li>
+                <li><strong>AI 분석</strong>: 인공지능 모델이 얼굴의 윤곽, 눈매, 코, 입 모양 등을 분석합니다.</li>
+                <li><strong>결과 확인</strong>: 강아지상/고양이상 확률이 퍼센트로 표시됩니다.</li>
+                <li><strong>결과 공유</strong>: 친구들에게 결과를 공유하고 함께 즐겨보세요!</li>
+            </ol>
+
+            <h3>정확한 결과를 위한 팁</h3>
             <ul>
-                <li>사진 업로드: 카메라 또는 갤러리에서 사진을 선택합니다.</li>
-                <li>이미지 분석: 인공지능 모델이 사진을 분석합니다.</li>
-                <li>결과 확인: 당신이 강아지상인지 고양이상인지 확인합니다.</li>
+                <li>정면을 바라보는 사진을 사용하세요</li>
+                <li>밝은 조명에서 촬영한 사진이 좋아요</li>
+                <li>선글라스나 마스크는 벗어주세요</li>
+                <li>얼굴이 사진의 중앙에 오도록 해주세요</li>
             </ul>
+        </section>
+
+        <!-- 자주 묻는 질문 FAQ 섹션 -->
+        <section id="faq">
+            <h2>자주 묻는 질문 (FAQ)</h2>
+
+            <div class="faq-item">
+                <h3>Q. 동물상 테스트는 무료인가요?</h3>
+                <p><strong>A.</strong> 네, 완전 무료입니다! 회원가입도 필요 없고, 횟수 제한도 없어요. 원하는 만큼 테스트해보세요.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q. 업로드한 사진은 어떻게 처리되나요?</h3>
+                <p><strong>A.</strong> 업로드한 사진은 서버에 저장되지 않습니다. 브라우저에서만 처리되고, 분석이 끝나면 즉시 메모리에서 삭제됩니다. 개인정보 걱정 없이 이용하세요!</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q. 모바일에서도 사용할 수 있나요?</h3>
+                <p><strong>A.</strong> 물론이죠! 스마트폰, 태블릿 등 모든 기기에서 이용 가능합니다. 모바일에서는 카메라로 바로 촬영할 수도 있어요.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q. 결과가 정확한가요?</h3>
+                <p><strong>A.</strong> 이 테스트는 재미와 엔터테인먼트 목적으로 만들어졌습니다. AI가 분석한 결과이지만 과학적 진단은 아니에요. 친구들과 재미있게 즐겨주세요!</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q. 강아지상도 고양이상도 아니라고 나올 수 있나요?</h3>
+                <p><strong>A.</strong> 결과는 강아지상과 고양이상의 확률로 표시됩니다. 예를 들어 "강아지상 60%, 고양이상 40%"처럼 나올 수 있어요. 두 유형의 매력을 모두 가지고 있다는 뜻이죠!</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Q. 왜 동물상 테스트가 인기인가요?</h3>
+                <p><strong>A.</strong> 2026년 현재 동물상 테스트는 MZ세대 사이에서 큰 인기를 끌고 있습니다. 자기 자신을 재미있게 표현하고, SNS에서 공유하기 좋아서 많은 분들이 즐기고 있어요.</p>
+            </div>
         </section>
 
         <section id="about-us">
             <h2>사이트 소개</h2>
-            <p>저희는 재미있고 유익한 인공지능 기반의 서비스를 제공하고자 합니다. 이 프로젝트는 인공지능 모델의 가능성을 탐구하고 사용자들에게 새로운 경험을 제공하기 위해 만들어졌습니다. 피드백이나 문의사항이 있으시면 언제든지 연락 주시기 바랍니다.</p>
+            <p>저희는 재미있고 유익한 인공지능 기반의 서비스를 제공하고자 합니다. 이 프로젝트는 인공지능 모델의 가능성을 탐구하고 사용자들에게 새로운 경험을 제공하기 위해 2026년 1월에 제작되었습니다. 피드백이나 문의사항이 있으시면 언제든지 연락 주시기 바랍니다.</p>
         </section>
 
         <section id="contact">
