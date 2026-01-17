@@ -478,16 +478,6 @@ footer p {
     transform: translateY(0);
 }
 
-/* 카카오톡 */
-.share-btn.kakao {
-    background-color: #FEE500;
-    color: #000000;
-}
-
-.share-btn.kakao:hover {
-    background-color: #E6CF00;
-}
-
 /* X (트위터) */
 .share-btn.twitter {
     background-color: #000000;

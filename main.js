@@ -136,23 +136,6 @@ function getShareText() {
     return `나는 ${currentResult}이래요! 🐾 AI 동물상 테스트로 당신의 동물상도 확인해보세요!`;
 }
 
-// 카카오톡 공유 (웹 공유 API 또는 URL 스킴)
-function shareKakao() {
-    const text = getShareText();
-    const url = SITE_URL;
-
-    // 카카오톡 공유 URL (모바일에서 작동)
-    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-        // 모바일: 카카오톡 URL 스킴
-        const kakaoUrl = `https://story.kakao.com/share?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
-        window.open(kakaoUrl, '_blank');
-    } else {
-        // PC: 카카오 스토리 공유
-        const kakaoUrl = `https://story.kakao.com/share?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
-        window.open(kakaoUrl, '_blank', 'width=600,height=400');
-    }
-}
-
 // X(트위터) 공유
 function shareTwitter() {
     const text = getShareText();
@@ -198,7 +181,6 @@ async function copyLink() {
 
 // 공유 버튼 이벤트 리스너 등록
 function initShareButtons() {
-    document.getElementById("share-kakao")?.addEventListener("click", shareKakao);
     document.getElementById("share-twitter")?.addEventListener("click", shareTwitter);
     document.getElementById("share-facebook")?.addEventListener("click", shareFacebook);
     document.getElementById("share-copy")?.addEventListener("click", copyLink);
